@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!-- 标签库定义文件的根元素是 taglib，它可以包含多个 tag 子元素，每个 tag 子元素都定义一个标签  -->
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+ <!-- taglib 下有三个子元素： -->
+ 
+ <!-- •tlib-version：指定该标签库实现的版本，这是一个作为标识的内部版本号，对程序没有太大的作用。 -->
+<tlib-version>1.0</tlib-version>
+
+ <!-- •short-name：该标签库的默认短名，该名称通常也没有太大的用处。   -->
+<short-name>cc</short-name>
+
+ <!-- •uri：这个属性非常重要，它指定该标签库的 URI，相当于指定该标签库的唯一标识。
+ JSP 页面中使用标签库时就是根据该 URI 属性来定位标签库的。 -->
+
+<tag>
+     <!-- tag 元素下至少应包含如下三个子元素： -->
+     
+     <!-- •name：该标签库的名称，这个属性很重要，JSP 页面中就是根据该名称来使用此标签的。 -->
+    <name>showUserInfo</name>
+    
+     <!-- •tag-class：指定标签的处理类，毋庸置疑，这个属性非常重要，指定了标签由哪个 Java 类来处理。 -->
+    <tag-class>com.yc.daily.UserInfoTag</tag-class>
+    
+     <!-- •body-content：这个属性也很重要，它指定标签体内容。该元素的值可以是如下几个： 
+               •tagdependent：指定标签处理类自己负责处理标签体。
+               •empty：指定该标签只能作用空标签使用。
+               •scriptless：指定该标签的标签体可以是静态 HTML 元素，表达式语言，但不允许出现 JSP 脚本。
+               •JSP：指定该标签的标签体可以使用 JSP 脚本。
+      -->
+    <body-content>empty</body-content>
+    
+    <attribute>
+        <!-- •name：设置属性名，子元素的值是字符串内容。
+             •required：设置该属性是否为不需属性(是否一定需要设置)，该子元素的值是 true 或 false。
+             •fragment：设置该属性是否支持 JSP 脚本、表达式等动态内容，子元素的值是 true 或 false。
+             •rtexprvalue: 声明在运行表达式时，标签属性是否有效。
+             •type 定义该属性的Java类类型 。默认指定为 String 
+             •description 描述信息    -->
+        <name>user</name>
+        <required>false</required>
+        <fragment>true</fragment>
+    </attribute>
+ </tag>
+</taglib>
