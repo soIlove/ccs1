@@ -17,6 +17,8 @@ create table t_admin
 	partyName varchar2(20) --所属部门的名称
 );
 
+alter table t_admin add email varchar2(100) not null;
+
 --申请用户的表单
 create table t_applyUser
 (
@@ -28,6 +30,8 @@ create table t_applyUser
 	adminId Integer, --审批人(管理员)
 	remark varchar2(200)
 );
+
+alter table t_applyUser add email varchar2(100) not null;
 
 --账单表
 create table t_bill

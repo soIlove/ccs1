@@ -22,13 +22,18 @@
 
 #loginForm input#loginBtn {
 	color: gray;
-	width: 80%;
+	width: 60%;
 	height: 200%;
 	clear: both;
 	marign-top:320px;
 	font-size:150%;
 	letter-spacing: 10px;
 	padding-left:20px;
+}
+
+#loginForm p a{
+	font-size:120%;
+	padding-left:10px;
 }
 
 #loginForm p label{
